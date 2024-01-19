@@ -279,7 +279,8 @@ i
   border-radius: 50px;
   text-decoration: none;
   padding-left: 3px;
-  padding-right: 3px;;
+  padding-right: 3px;
+  transition:all 0.3s ease-in-out;
 }
 .download
 {
@@ -296,7 +297,7 @@ i
 
 .download a:hover
 {
-  animation: color-change 0.3s ease-in-out;
+  /* animation: color-change 0.3s ease-in-out; */
   background-color: var(--color-active);
 }
 
@@ -595,6 +596,60 @@ h4
   font-size:1rem;
 }
 
+/* Material */
+
+.material-items
+{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  margin-top:80px;
+  margin-left: auto;
+  margin-right: auto;
+  /* position: absolute;
+  left:27.5%; */
+  width:50%;
+}
+
+.material-item
+{
+  width:250px;
+  height:250px;
+  border:5px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:20px;
+  color:var(--color-active);
+  position: relative;
+  transition: 0.3s all ease-in-out;
+  cursor: pointer;
+}
+
+
+.material-item h2
+{
+  background-color: transparent;
+}
+
+.material-item p
+{
+  margin:20px;
+  position:absolute;
+  bottom:5px;
+  font-size:0.9rem;
+  text-align: center;
+  background-color: transparent;
+}
+
+.material-item:hover
+{
+  background-color: var(--color-active);
+  color:white;
+}
+
+/* Contact */
+
 .contact-cont
 {
   display: grid;
@@ -640,7 +695,14 @@ h4
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  transition: all 0.35s ease-in-out;
 }
+
+/* .submit:hover
+{
+  background-color:#b6bec6;
+  color:var(--color-grey-1);
+} */
 
 .text-area
 {
