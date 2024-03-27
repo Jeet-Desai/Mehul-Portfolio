@@ -20,4 +20,11 @@ materialItems[0].addEventListener("click",()=>window.open("https://drive.google.
 materialItems[1].addEventListener("click",()=>window.open("https://drive.google.com/drive/folders/1U0XqPr-CV-XdQbuB23NggwOAUTbDsyG3"));
 materialItems[2].addEventListener("click",()=>window.open("https://drive.google.com/drive/folders/1me_H18v5kmKVe60vp3e51oiRc3_qRmRi"));
 materialItems[3].addEventListener("click",()=>window.open("https://drive.google.com/drive/folders/1cMTEnjsGLDC0__Di6qH-wZYjN7shxnoi"));
+const menu=document.querySelector(".menu");
+menu.addEventListener("click",()=>
+{
+    const vcontrols=document.querySelector(".vcontrols");
+    vcontrols.classList.toggle("hidden");
+    
+});
 
