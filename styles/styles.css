@@ -174,7 +174,7 @@ i {
 }
 
 .right-home p {
-  font-size: 1.5rem;
+  font-size: 1.32rem;
   width: 80%;
   align-self: flex-start;
 }
@@ -192,11 +192,11 @@ i {
 }
 
 .download {
-  width: 235px;
+  width: auto;
   align-self: flex-start;
-  /* position: absolute; */
-  top: 540px;
-  margin-top: 50px;
+  position: relative;
+  /* top: 540px; */
+  margin-top: 2rem;
 }
 
 .download i {
@@ -264,7 +264,6 @@ i {
   display: flex;
   flex-direction: column;
   margin-top: 80px;
-  margin-left: 1rem;
   padding: 20px;
 }
 
@@ -677,10 +676,10 @@ h4 {
 
   .download {
 
-    position: absolute;
+    position: realtive;
     top: 90%;
     align-self: center;
-    width:150px;
+    width:auto;
   }
 
   .download a
