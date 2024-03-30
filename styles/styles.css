@@ -722,7 +722,7 @@ h4 {
   {
     /* display:block; */
     /* opacity: 1; */
-    position:fixed;
+    position:absolute;
     top:8%;
     right:5.4%;
     background-color: transparent;
