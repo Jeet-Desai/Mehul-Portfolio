@@ -1165,6 +1165,14 @@ h4 {
     background-color: transparent;
   }
 
+  .time-item {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-left: 2.5rem;
+    width: 80%;
+}
+
   ::placeholder {
     font-size:0.95rem;
     color: white;
