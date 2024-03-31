@@ -177,6 +177,7 @@ i {
   font-size: 1.32rem;
   width: 80%;
   align-self: flex-start;
+  margin-top: 1rem;
 }
 
 .download a {
@@ -678,6 +679,7 @@ h4 {
     font-size: 1.1rem;
     margin-left: auto;
     margin-right: auto;
+    margin-top:1rem;
   }
 
   .download {
@@ -822,6 +824,117 @@ h4 {
 
 @media(max-width:960px)
 {
+  .home-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-home {
+    width: 100%;
+    background-color: var(--color-active);
+    height: auto;
+  }
+
+  .left-home img {
+    width: 50%;
+    height: auto;
+  }
+
+  .right-home {
+    width: 100%;
+  }
+
+  .right-home h1 {
+    font-size: 1.4rem;
+  }
+
+  .home-heading {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .right-home p {
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:1rem;
+  }
+
+  .download {
+
+    position: realtive;
+    top: 90%;
+    align-self: center;
+    width:auto;
+  }
+
+  .download a
+  {
+    font-size: 1rem;
+  }
+
+  .menu {
+    display: flex;
+    position: absolute;
+    top: 1%;
+    right: 6.1%;
+    background-color:transparent;
+    /* border-radius: 50%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 1rem;
+    width: 35px;
+    height: 35px;
+    font-size: 2.3rem;
+    color: var(--color-3);
+    cursor: pointer;
+  }
+
+  .controls
+  {
+    display: none;
+  }
+
+  .vcontrols
+  {
+    /* display:block; */
+    /* opacity: 1; */
+    position:absolute;
+    top:8%;
+    right:5.4%;
+    background-color: transparent;
+  }
+
+  .btn-cont
+  {
+    background-color:transparent;
+  }
+  .btn {
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    /* border:5px solid var(--color-secondary); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    color: var(--color-3);
+    cursor: pointer;
+    margin-bottom: 40%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+
+  .info
+  {
+    display: none;
+  }
 
   .right-abt-title
   {
@@ -1038,6 +1151,7 @@ h4 {
   .right-home p
   {
     font-size: 1rem;
+    margin-top: 1rem;
   }
   .main-title {
     font-size: 1.6rem;
@@ -1223,5 +1337,4 @@ h4 {
     margin: 7px auto;
     padding: 10px;
     color: white; */
-}
 }

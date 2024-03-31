@@ -27,4 +27,3 @@ menu.addEventListener("click",()=>
     vcontrols.classList.toggle("hidden");
     
 });
-
