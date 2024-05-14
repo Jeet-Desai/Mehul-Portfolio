@@ -25,5 +25,10 @@ menu.addEventListener("click",()=>
 {
     const vcontrols=document.querySelector(".vcontrols");
     vcontrols.classList.toggle("hidden");
-    
 });
+
+const OK=document.getElementById("ok");
+OK.onclick=()=>{
+    const message= document.querySelector(".messagesent");
+    message.classList.add("hidden");
+}

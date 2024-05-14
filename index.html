@@ -9,10 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
 </head>
 <body>
     <main class="main-content">
-    <section class="section sec1  active" id="home">
+    <section class="section sec1  " id="home">
         <div class="home-content">
         <div class="left-home">
             <img src="images/DeanMEssage.jpeg" alt="">
@@ -37,8 +40,7 @@
             <div class="left-abt">
                 <h4>INFORMATION ABOUT ME</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum sed libero est suscipit eos ut eligendi quisquam sunt, eveniet saepe, sit provident esse ipsam illo quia commodi maxime officia quos. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum accusantium expedita tempore dolore laboriosam. Iusto, vero quaerat. 
-                </p>
+                    With over 22 years of combined teaching and administrative experience at Udhna College, specializing in Cost and Management Accounting, I've nurtured a culture of learning and independent thought. My six-year tenure as Principal has deepened my commitment to academic excellence and honed my expertise in administration. Alongside, my research in Accounting, Finance, and Management seeks innovative solutions to contemporary challenges. By emphasizing critical thinking and lifelong learning, I equip students with essential skills for success.Encouraging inclusive education, I create a space that sparks curiosity and fosters interdisciplinary dialogue, driven by my belief in the transformative impact of education. </p>
                 <div class="personal-info">
                     <div class="info-item">
                         <div class="info-title">Qualification</div>
@@ -66,7 +68,7 @@
                 <div class="items">
                     <div class="item">
                         <div class="figure">
-                            <p>21</p>
+                            <p>22</p>
                         </div>
                         <div class="item-text">
                             <p>Years<br/>Teaching Experience</p>
@@ -106,7 +108,7 @@
                     </div>
                     <div class="item">
                         <div class="figure">
-                            <p>6</p>
+                            <p>7</p>
                         </div>
                         <div class="item-text">
                             <p>Candidates Guided<br/>for Ph.D</p>
@@ -189,8 +191,12 @@
             </div>
         </div>
     </section>
-    <section class="section sec5" id="contact">
+    <section class="section sec5 active" id="contact">
         <h1 class="main-title">CONTACT ME</h1>
+        <div class="messagesent hidden">
+            Message Sent Succesfully!
+            <button id="ok">OK</button>
+        </div>
         <div class="contact-cont">
             <div class="left-contact">
                     <h4 class="h4-contact">Contact me here</h4>
@@ -257,16 +263,16 @@
             </div>
             <div class="right-contact">
                 <div class="form-cont">
-                <form class="contact-form" method="post">
+                <form class="contact-form" id="fcontactform">
                     <div class="input-contact">
-                        <input type="text" required class="i1" placeholder="Name">
-                        <input type="email" required class="i1" placeholder="E-mail">
+                        <input type="text" id="fname" required class="i1" placeholder="Name">
+                        <input type="email" id="femail" required class="i1" placeholder="E-mail">
                     </div>
                     <div class="input-contact">
-                        <input type="text" required class="i1" placeholder="Subject">
+                        <input type="text" id="fsubject" required class="i1" placeholder="Subject">
                     </div>
                     <div class="text-area">
-                        <textarea class="message" rows="8" cols="8" placeholder="Message"></textarea>
+                        <textarea class="message" id="fmessage" rows="8" cols="8" placeholder="Message"></textarea>
                     </div>
                     <div class="input-contact">
                         <input type="submit" class="i1 submit">
@@ -319,7 +325,7 @@
             </div>
     </div>
 
-    <div class="vcontrols hidden">
+    <div class="hidden vcontrols">
         <div class="btn-cont">
             <div class="btn control-1" title="Home" data-id="home">
                 <i class="fas fa-home"></i>
@@ -355,14 +361,70 @@
                 <i class="fas fa-envelope-open"></i>
             </div>
                 <div class="info">Contact</div>
-            
             </div>
     </div>
     </main>
 
     
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-database.js"></script> -->
 
-    
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> 
+    <script src="database.js"></script> -->
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script type="" src="message.js"></script> -->
     <script src="index.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAWR-8kCjTvdXbfWPSfwysDUd_u4S78O7c",
+          authDomain: "mehul-portfolio-007.firebaseapp.com",
+          databaseURL: "https://mehul-portfolio-007-default-rtdb.firebaseio.com",
+          projectId: "mehul-portfolio-007",
+          storageBucket: "mehul-portfolio-007.appspot.com",
+          messagingSenderId: "21163930648",
+          appId: "1:21163930648:web:f23db515408c87a725bf6d",
+          measurementId: "G-1QNMPWTSWV"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+        const db=getDatabase(app);
+
+        function sendData(e)
+        {
+            e.preventDefault();
+
+            var name = document.getElementById("fname").value;
+            var emailID = document.getElementById("femail").value;
+            var subject = document.getElementById("fsubject").value;
+            var message = document.getElementById("fmessage").value;
+            set(ref(db,"messages/"+name),{
+                userName: name,
+                userEmail:emailID,
+                userSubject: subject,
+                userMessage: message
+            });
+
+            const msg= document.querySelector(".messagesent");
+            msg.classList.remove("hidden");
+            document.getElementById("fcontactform").reset();
+        }
+        document.getElementById("fcontactform").addEventListener("submit",sendData);
+
+      </script>
+    
 </body>
 </html>
