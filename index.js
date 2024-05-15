@@ -47,7 +47,8 @@ function updateCounter() {
     
     // Update localStorage with the new counter value
     localStorage.setItem('visit-count', visitCount);
-    console.log(visitCount);
+    // console.log(visitCount);
+    document.querySelector(".hitcount").innerHTML=visitCount;
     
     // Update the counter display on the page
     // document.getElementById('visit-counter').innerText = visitCount;

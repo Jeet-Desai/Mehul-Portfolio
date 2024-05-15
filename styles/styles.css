@@ -24,6 +24,12 @@
 
 
 /* Controls #97cdc0 */
+
+.hitcount{
+  position: absolute;
+  bottom: 0;
+  right:0;
+}
 .menu {
   display: none;
 }
