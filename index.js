@@ -32,3 +32,26 @@ OK.onclick=()=>{
     const message= document.querySelector(".messagesent");
     message.classList.add("hidden");
 }
+
+function updateCounter() {
+    // Get the current counter value from localStorage
+    let visitCount = localStorage.getItem('visit-count');
+    
+    // If there's no counter in localStorage, initialize it to 0
+    if (visitCount === null) {
+        visitCount = 0;
+    }
+    
+    // Increment the counter
+    visitCount++;
+    
+    // Update localStorage with the new counter value
+    localStorage.setItem('visit-count', visitCount);
+    console.log(visitCount);
+    
+    // Update the counter display on the page
+    // document.getElementById('visit-counter').innerText = visitCount;
+}
+
+// Call the function to update the counter when the page loads
+window.onload = updateCounter;
